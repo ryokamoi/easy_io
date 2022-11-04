@@ -14,3 +14,10 @@ except PackageNotFoundError:  # pragma: no cover
     __version__ = "unknown"
 finally:
     del version, PackageNotFoundError
+
+import importlib.metadata
+__version__ = importlib.metadata.version('easy_io')
+
+
+from easy_io.easy_io import *
+
