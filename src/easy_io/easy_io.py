@@ -20,6 +20,8 @@ def read_numbers_list_from_text_file(file_path: Union[Path, str], num_type="int"
             line = line_[:-1]
             if num_type == "int":
                 output.append(int(line))
+            elif num_type == "float":
+                output.append(float(line))
             else:
                 raise ValueError("Not implemented")
     
