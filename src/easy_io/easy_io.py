@@ -13,6 +13,12 @@ def read_jsonl(dataset_path: Union[Path, str]) -> List[dir]:
     return dataset_json_list
 
 
+def dump_jsonl(output_list: List[dict], output_path: Union[Path, str]) -> None:
+    with open(output_path, "w") as f:
+        for d in output_list:
+            f.write(json.dumps(d) + "\n")
+
+
 def read_list_from_text_file(file_path: Union[Path, str], element_type: Literal["int", "float", "str"]) -> List[int]:
     output = []
     with open(file_path, "r") as f:
