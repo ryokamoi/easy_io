@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 
-def read_jsonl(dataset_path: Union[Path, str]) -> List[dir]:
+def read_jsonl(dataset_path: Union[Path, str]) -> List[dict]:
     dataset_json_list = []
     with open(dataset_path, "r") as f:
         for line in f.readlines():
@@ -19,7 +19,7 @@ def dump_jsonl(output_list: List[dict], output_path: Union[Path, str]) -> None:
             f.write(json.dumps(d) + "\n")
 
 
-def read_list_from_text_file(file_path: Union[Path, str], element_type: Literal["int", "float", "str"]) -> List[int]:
+def read_list_from_text_file(file_path: Union[Path, str], element_type: Literal["int", "float", "str"]) -> List[Union[int, float, str]]:
     output = []
     with open(file_path, "r") as f:
         for line_ in f.readlines():
