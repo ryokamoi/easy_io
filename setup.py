@@ -8,4 +8,5 @@ setup(
     author_email="ryokamoi.jp@gmail.com",
     url="https://github.com/ryokamoi/easy_io",
     license="MIT",
+    python_requires=">=3.9",
 )

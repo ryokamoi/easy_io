@@ -1,4 +1,4 @@
-from typing import Union, List
+from typing import Union
 import json
 
 from pathlib import Path
@@ -18,7 +18,7 @@ def dump_json(output_dict: dict, output_path: Union[Path, str]) -> None:
         json.dump(output_dict, f, indent=4, ensure_ascii=False)
 
 
-def read_jsonl(file_path: Union[Path, str]) -> List[dict]:
+def read_jsonl(file_path: Union[Path, str]) -> list:
     """Read a jsonl file and return a list of dictionaries."""
     
     dataset_json_list = []
@@ -29,7 +29,7 @@ def read_jsonl(file_path: Union[Path, str]) -> List[dict]:
     return dataset_json_list
 
 
-def dump_jsonl(output_list: List[dict], output_path: Union[Path, str]) -> None:
+def dump_jsonl(output_list: list, output_path: Union[Path, str]) -> None:
     """Dump a list of dictionaries to a jsonl file."""
     
     with open(output_path, "w") as f:
