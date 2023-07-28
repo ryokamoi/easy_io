@@ -35,3 +35,10 @@ def dump_jsonl(output_list: list, output_path: Union[Path, str]) -> None:
     with open(output_path, "w") as f:
         for d in output_list:
             f.write(json.dumps(d) + "\n")
+
+
+def read_lines_from_txt_file(file_path: Union[Path, str]) -> list:
+    """Read a txt file and return a list of lines."""
+    
+    with open(file_path, "r") as f:
+        return f.readlines()
