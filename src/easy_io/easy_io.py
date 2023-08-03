@@ -1,5 +1,6 @@
 from typing import Union
 import json
+import csv
 
 from pathlib import Path
 
@@ -42,3 +43,18 @@ def read_lines_from_txt_file(file_path: Union[Path, str]) -> list:
     
     with open(file_path, "r") as f:
         return f.readlines()
+
+
+def read_csv(file_path: Union[Path, str]) -> list:
+    """Read a csv file and return a list of lists."""
+    
+    with open(file_path, "r") as f:
+        return list(csv.reader(f))
+
+
+def dump_csv(output_list: list, output_path: Union[Path, str]) -> None:
+    """Dump a list of lists to a csv file."""
+    
+    with open(output_path, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(output_list)
