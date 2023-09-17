@@ -5,8 +5,7 @@ This project includes functions that makes I/O in Python code easier.
 ## Setup
 
 ```sh
-git clone https://github.com/ryokamoi/easy_io.git
-pip install ./easy_io
+pip install git+https://github.com/ryokamoi/easy_io
 ```
 
 ## Example
