@@ -38,11 +38,16 @@ def dump_jsonl(output_list: list, output_path: Union[Path, str]) -> None:
             f.write(json.dumps(d) + "\n")
 
 
-def read_lines_from_txt_file(file_path: Union[Path, str]) -> list:
+def read_lines_from_txt_file(file_path: Union[Path, str], remove_newline_char: bool=True) -> list:
     """Read a txt file and return a list of lines."""
     
     with open(file_path, "r") as f:
-        return f.readlines()
+        output_lines = f.readlines()
+    
+    if remove_newline_char:
+        return [line[:-1] for line in output_lines]
+    else:
+        remove_newline_char
 
 
 def read_csv(file_path: Union[Path, str]) -> list:
