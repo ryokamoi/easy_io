@@ -50,6 +50,14 @@ def read_lines_from_txt_file(file_path: Union[Path, str], remove_newline_char: b
         remove_newline_char
 
 
+def dump_str_list_to_txt_file(output_list: list, output_path: Union[Path, str]) -> None:
+    """Dump a list of strings to a txt file."""
+    
+    with open(output_path, "w") as f:
+        for s in output_list:
+            f.write(s + "\n")
+
+
 def read_csv(file_path: Union[Path, str]) -> list:
     """Read a csv file and return a list of lists."""
     

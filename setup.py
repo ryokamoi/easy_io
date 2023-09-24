@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="easy_io",
-    version="0.2.0",
+    version="0.2.1",
     description="A package that includes many functions for making I/O in Python code easy.",
     author="Ryo Kamoi",
     author_email="ryokamoi.jp@gmail.com",
