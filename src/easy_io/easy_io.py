@@ -45,7 +45,7 @@ def read_lines_from_txt_file(file_path: Union[Path, str], remove_newline_char: b
         output_lines = f.readlines()
     
     if remove_newline_char:
-        return [line[:-1] for line in output_lines]
+        return [line[:-1] if line[-1] == "\n" else line for line in output_lines]
     else:
         remove_newline_char
 
